@@ -13,7 +13,7 @@
 
 {% block content %}
     <article>
-      <p>{{created|formatDate}}</p>
+      <p class="post-date">{{created|formatDate}}</p>
       <section class="content-body">
       {{body | safe}}
       </section>
