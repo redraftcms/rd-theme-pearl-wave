@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block title %}{{title}} - {{super()}}{% endblock %}
+
+{% block heading %}
+    <h1 class="title">
+      <a href="{{url}}">{{title}}</a>
+    </h1>
+    {% if subtitle %}
+    <h2 class="subtitle">{{subtitle}}</h2>
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+    <article>
+      <p>{{created|formatDate}}</p>
+      <section class="content-body">
+      {{body | safe}}
+      </section>
+    </article>
+{% endblock %}

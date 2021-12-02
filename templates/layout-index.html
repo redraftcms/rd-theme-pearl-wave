@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head data-gincb="{{rd.cacheBuster}}">
+  <meta charset="utf-8">
+  <title>{% block title %}{{rd.site.name}}{% endblock %}</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="{{rd.site.description}}">
+  <link rel="stylesheet" href="{{asset('css/main.css')}}">
+  <link rel="canonical" href="{{canonical()}}">
+  {{ head() | safe }}
+</head>
+<body>
+  <div class="content-wrap">
+    <div class="nav-wrap column is-12 is-offset-1 is-10-desktop is-offset-1-desktop">
+      {{ '' | navigation("main") | safe }}
+    </div>
+    <header class="hero">
+      <div class="hero-body">
+        <div class="container">
+          <div class="columns">
+            <div class="column is-10 is-offset-1 is-6-desktop is-offset-3-desktop">
+              {% block header %}{% endblock %} 
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <section class="section">
+      <div class="container">
+        <section id="primary-content" class="content">
+          <div class="columns">
+            <div class="column is-10 is-offset-1 is-6-desktop is-offset-3-desktop">
+              {% block content %} No. {% endblock %}
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
+    </div>
+  <footer class="footer has-text-centered">
+    {{ '' | navigation("footer-menu") | safe }}
+    {% block foot %}
+    {% endblock%}
+  </footer>
+{{ foot() | safe }}
+<script src="{{asset('js/main.js')}}"></script>
+</body>
+</html>
