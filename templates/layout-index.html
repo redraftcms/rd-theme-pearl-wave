@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-<head data-gincb="{{rd.cacheBuster}}">
+<head data-rdcb="{{rd.cacheBuster}}">
   <meta charset="utf-8">
-  <title>{% block title %}{{rd.site.name}}{% endblock %}</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="description" content="{{rd.site.description}}">
-  <link rel="stylesheet" href="{{asset('css/main.css')}}">
+  <title>{% block title %}{{rd.site.name}}{% endblock %}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet"> 
+  {% assets ['css/main.css'] %}
+  <!-- Assets -->
+  {% endassets %}
   <link rel="canonical" href="{{canonical()}}">
   {{ head() | safe }}
 </head>
